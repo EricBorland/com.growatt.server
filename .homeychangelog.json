@@ -1,5 +1,8 @@
 {
   "1.0.1": {
     "en": "Added support for off-grid inverters with storage"
+  },
+  "1.0.2": {
+    "en": "Fixed the Driver pairing image path"
   }
 }
