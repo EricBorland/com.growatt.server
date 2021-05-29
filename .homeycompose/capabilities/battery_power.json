@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Battery power",
+    "es": "Potencia de la batería"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "W",
+    "es": "W"
+  },
+  "icon": "/assets/battery.svg",
+  "insights": true
+}

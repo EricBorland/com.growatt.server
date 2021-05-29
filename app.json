@@ -1,0 +1,226 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.growatt.server",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#7DC600",
+  "name": {
+    "en": "Growatt"
+  },
+  "description": {
+    "en": "Adds support for off-grid or storage-based Growatt installations"
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "tags": {
+    "en": [
+      "solar",
+      "energy",
+      "PV",
+      "off-grid",
+      "battery"
+    ],
+    "es": [
+      "solar",
+      "energía",
+      "PV",
+      "off-grid",
+      "batería"
+    ]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Eric Borland",
+    "email": "eric.borland@gmail.com"
+  },
+  "homepage": "https://www.ginverter.com/",
+  "drivers": [
+    {
+      "name": {
+        "en": "growatt"
+      },
+      "class": "solarpanel",
+      "capabilities": [
+        "measure_battery",
+        "measure_power",
+        "solar_power",
+        "battery_power",
+        "grid_power",
+        "meter_power",
+        "solar_energy",
+        "battery_energy",
+        "grid_energy",
+        "monthly_savings",
+        "total_savings"
+      ],
+      "images": {
+        "small": "/drivers/growatt/assets/images/small.png",
+        "large": "/drivers/growatt/assets/images/large.png",
+        "xlarge": "/drivers/growatt/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "/assets/images/logo.png"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
+      "id": "growatt"
+    }
+  ],
+  "capabilities": {
+    "battery_energy": {
+      "type": "number",
+      "title": {
+        "en": "Battery energy",
+        "es": "Energía de la batería"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "KWh",
+        "es": "KWh"
+      },
+      "icon": "/assets/battery.svg",
+      "insights": true
+    },
+    "battery_power": {
+      "type": "number",
+      "title": {
+        "en": "Battery power",
+        "es": "Potencia de la batería"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "W",
+        "es": "W"
+      },
+      "icon": "/assets/battery.svg",
+      "insights": true
+    },
+    "grid_energy": {
+      "type": "number",
+      "title": {
+        "en": "Grid energy",
+        "es": "Energía de la red"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "KWh",
+        "es": "KWh"
+      },
+      "icon": "/assets/grid.svg",
+      "insights": true
+    },
+    "grid_power": {
+      "type": "number",
+      "title": {
+        "en": "Grid power",
+        "es": "Potencia de la red"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "W",
+        "es": "W"
+      },
+      "icon": "/assets/grid.svg",
+      "insights": true
+    },
+    "monthly_savings": {
+      "type": "number",
+      "title": {
+        "en": "Monthly savings",
+        "es": "Ahorro mensual"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "€",
+        "es": "€"
+      },
+      "icon": "/assets/savings.svg",
+      "insights": true
+    },
+    "solar_energy": {
+      "type": "number",
+      "title": {
+        "en": "Solar energy",
+        "es": "Energía solar"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "KWh",
+        "es": "KWh"
+      },
+      "icon": "/assets/solar.svg",
+      "insights": true
+    },
+    "solar_power": {
+      "type": "number",
+      "title": {
+        "en": "Solar power",
+        "es": "Potencia solar"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "W",
+        "es": "W"
+      },
+      "icon": "/assets/solar.svg",
+      "insights": true
+    },
+    "total_savings": {
+      "type": "number",
+      "title": {
+        "en": "Total savings",
+        "es": "Ahorro total"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "€",
+        "es": "€"
+      },
+      "icon": "/assets/savings.svg",
+      "insights": true
+    }
+  }
+}

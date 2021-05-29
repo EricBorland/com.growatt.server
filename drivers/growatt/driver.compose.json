@@ -1,0 +1,41 @@
+{
+  "name": {
+    "en": "growatt"
+  },
+  "class": "solarpanel",
+  "capabilities": [
+    "measure_battery",
+    "measure_power",
+    "solar_power",
+    "battery_power",
+    "grid_power",
+    "meter_power",
+    "solar_energy",
+    "battery_energy",
+    "grid_energy",
+    "monthly_savings",
+    "total_savings"
+  ],
+  "images": {
+    "small": "/drivers/growatt/assets/images/small.png",
+    "large": "/drivers/growatt/assets/images/large.png",
+    "xlarge": "/drivers/growatt/assets/images/xlarge.png"
+  },
+  "pair": [{
+    "id": "login_credentials",
+    "template": "login_credentials",
+    "options": {
+      "logo": "/assets/images/logo.png"
+    }
+  }, {
+    "id": "list_devices",
+    "template": "list_devices",
+    "navigation": { "next": "add_devices" }
+  }, {
+    "id": "add_devices",
+    "template": "add_devices"
+  }],
+  "energy": {
+    "batteries": ["OTHER"]
+  }
+}

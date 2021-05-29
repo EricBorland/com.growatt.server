@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Grid power",
+    "es": "Potencia de la red"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "W",
+    "es": "W"
+  },
+  "icon": "/assets/grid.svg",
+  "insights": true
+}

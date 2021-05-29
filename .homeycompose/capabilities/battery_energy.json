@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Battery energy",
+    "es": "Energía de la batería"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "KWh",
+    "es": "KWh"
+  },
+  "icon": "/assets/battery.svg",
+  "insights": true
+}

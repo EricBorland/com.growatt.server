@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Total savings",
+    "es": "Ahorro total"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "€",
+    "es": "€"
+  },
+  "icon": "/assets/savings.svg",
+  "insights": true
+}

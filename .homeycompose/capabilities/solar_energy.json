@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Solar energy",
+    "es": "Energía solar"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "KWh",
+    "es": "KWh"
+  },
+  "icon": "/assets/solar.svg",
+  "insights": true
+}

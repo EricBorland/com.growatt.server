@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Solar power",
+    "es": "Potencia solar"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "W",
+    "es": "W"
+  },
+  "icon": "/assets/solar.svg",
+  "insights": true
+}

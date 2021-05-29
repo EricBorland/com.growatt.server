@@ -1,0 +1,32 @@
+{
+  "id": "com.growatt.server",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#7DC600",
+  "name": {
+    "en": "Growatt"
+  },
+  "description": {
+    "en": "Advanced residential and off-grid storage solution",
+    "es": "Solución avanzada para sistemas residenciales o desconectados de la red"
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "tags": {
+    "en": ["solar", "energy", "PV", "off-grid", "battery"],
+    "es": ["solar", "energía", "PV", "off-grid", "batería"]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Eric Borland",
+    "email": "eric.borland@gmail.com"
+  },
+  "homepage": "https://www.ginverter.com/"
+}

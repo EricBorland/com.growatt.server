@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Grid energy",
+    "es": "Energía de la red"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "units": {
+    "en": "KWh",
+    "es": "KWh"
+  },
+  "icon": "/assets/grid.svg",
+  "insights": true
+}
