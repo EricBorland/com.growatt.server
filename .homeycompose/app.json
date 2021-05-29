@@ -1,6 +1,6 @@
 {
   "id": "com.growatt.server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#7DC600",
@@ -16,8 +16,20 @@
   ],
   "permissions": [],
   "tags": {
-    "en": ["solar", "energy", "PV", "off-grid", "battery"],
-    "es": ["solar", "energía", "PV", "off-grid", "batería"]
+    "en": [
+      "solar",
+      "energy",
+      "PV",
+      "off-grid",
+      "battery"
+    ],
+    "es": [
+      "solar",
+      "energía",
+      "PV",
+      "off-grid",
+      "batería"
+    ]
   },
   "images": {
     "small": "/assets/images/small.png",
