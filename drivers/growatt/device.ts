@@ -61,17 +61,19 @@ class GrowattDevice extends Device {
       type: data.type
     });
     if (result) {
-      this.setCapabilityValue('measure_power', result.power);
-      this.setCapabilityValue('solar_power', result.solarPower);
-      this.setCapabilityValue('battery_power', result.batteryPower);
-      this.setCapabilityValue('grid_power', result.gridPower);
-      this.setCapabilityValue('meter_power', result.energy);
-      this.setCapabilityValue('solar_energy', result.solarEnergy);
-      this.setCapabilityValue('battery_energy', result.batteryEnergy);
-      this.setCapabilityValue('grid_energy', result.gridEnergy);
-      this.setCapabilityValue('monthly_savings', result.monthlySavings);
-      this.setCapabilityValue('total_savings', result.totalSavings);
-      this.setCapabilityValue('measure_battery', result.batterySOC);
+      const promises = [];
+      promises.push(this.setCapabilityValue('meter_solar_power', result.solarPower));
+      promises.push(this.setCapabilityValue('meter_battery_power', result.batteryPower));
+      promises.push(this.setCapabilityValue('meter_grid_power', result.gridPower));
+      promises.push(this.setCapabilityValue('meter_power', result.energy));
+      promises.push(this.setCapabilityValue('measure_solar_energy', result.solarEnergy));
+      promises.push(this.setCapabilityValue('measure_battery_energy', result.batteryEnergy));
+      promises.push(this.setCapabilityValue('measure_grid_energy', result.gridEnergy));
+      promises.push(this.setCapabilityValue('measure_power', result.power));
+      promises.push(this.setCapabilityValue('monthly_savings', result.monthlySavings));
+      promises.push(this.setCapabilityValue('total_savings', result.totalSavings));
+      promises.push(this.setCapabilityValue('measure_battery', result.batterySOC));
+      await Promise.all(promises);
     }
   }
 }

@@ -51,13 +51,13 @@
       "capabilities": [
         "measure_battery",
         "measure_power",
-        "solar_power",
-        "battery_power",
-        "grid_power",
+        "meter_solar_power",
+        "meter_battery_power",
+        "meter_grid_power",
         "meter_power",
-        "solar_energy",
-        "battery_energy",
-        "grid_energy",
+        "measure_solar_energy",
+        "measure_battery_energy",
+        "measure_grid_energy",
         "monthly_savings",
         "total_savings"
       ],
@@ -95,7 +95,7 @@
     }
   ],
   "capabilities": {
-    "battery_energy": {
+    "measure_battery_energy": {
       "type": "number",
       "title": {
         "en": "Battery energy",
@@ -111,23 +111,7 @@
       "icon": "/assets/battery.svg",
       "insights": true
     },
-    "battery_power": {
-      "type": "number",
-      "title": {
-        "en": "Battery power",
-        "es": "Potencia de la batería"
-      },
-      "uiComponent": "sensor",
-      "getable": true,
-      "setable": false,
-      "units": {
-        "en": "W",
-        "es": "W"
-      },
-      "icon": "/assets/battery.svg",
-      "insights": true
-    },
-    "grid_energy": {
+    "measure_grid_energy": {
       "type": "number",
       "title": {
         "en": "Grid energy",
@@ -143,7 +127,39 @@
       "icon": "/assets/grid.svg",
       "insights": true
     },
-    "grid_power": {
+    "measure_solar_energy": {
+      "type": "number",
+      "title": {
+        "en": "Solar energy",
+        "es": "Energía solar"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "KWh",
+        "es": "KWh"
+      },
+      "icon": "/assets/solar.svg",
+      "insights": true
+    },
+    "meter_battery_power": {
+      "type": "number",
+      "title": {
+        "en": "Battery power",
+        "es": "Potencia de la batería"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "W",
+        "es": "W"
+      },
+      "icon": "/assets/battery.svg",
+      "insights": true
+    },
+    "meter_grid_power": {
       "type": "number",
       "title": {
         "en": "Grid power",
@@ -157,6 +173,22 @@
         "es": "W"
       },
       "icon": "/assets/grid.svg",
+      "insights": true
+    },
+    "meter_solar_power": {
+      "type": "number",
+      "title": {
+        "en": "Solar power",
+        "es": "Potencia solar"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "W",
+        "es": "W"
+      },
+      "icon": "/assets/solar.svg",
       "insights": true
     },
     "monthly_savings": {
@@ -173,38 +205,6 @@
         "es": "€"
       },
       "icon": "/assets/savings.svg",
-      "insights": true
-    },
-    "solar_energy": {
-      "type": "number",
-      "title": {
-        "en": "Solar energy",
-        "es": "Energía solar"
-      },
-      "uiComponent": "sensor",
-      "getable": true,
-      "setable": false,
-      "units": {
-        "en": "KWh",
-        "es": "KWh"
-      },
-      "icon": "/assets/solar.svg",
-      "insights": true
-    },
-    "solar_power": {
-      "type": "number",
-      "title": {
-        "en": "Solar power",
-        "es": "Potencia solar"
-      },
-      "uiComponent": "sensor",
-      "getable": true,
-      "setable": false,
-      "units": {
-        "en": "W",
-        "es": "W"
-      },
-      "icon": "/assets/solar.svg",
       "insights": true
     },
     "total_savings": {
