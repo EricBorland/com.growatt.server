@@ -4,5 +4,8 @@
   },
   "1.0.2": {
     "en": "Fixed the Driver pairing image path"
+  },
+  "1.1.0": {
+    "en": "renamed custom capabilities in order to have auto generated flow triggers"
   }
 }
