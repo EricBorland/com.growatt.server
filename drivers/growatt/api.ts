@@ -114,23 +114,25 @@ export class GrowattAPI {
     }
   }
 
+  /*
+    mix type seems to be working for SPH inverters
+  */
   async fetchMixData(id: string, plantId: string) {
     const statusData = (await this.request.post(`/panel/mix/getMIXStatusData?plantId=${plantId}`, `mixSn=${id}`)).data.obj;
     const totalData = (await this.request.post(`/panel/mix/getMIXTotalData?plantId=${plantId}`, `mixSn=${id}`)).data.obj;
     const plantData = (await this.request.post('/device/getPlantTotalData', `plantId=${plantId}`)).data.obj;
-    if (statusData) {
-    // if (statusData && totalData && plantData) {
+    if (statusData && totalData && plantData) {
       return {
         power: parseFloat(statusData.pLocalLoad),
         solarPower: parseFloat(statusData.pPv1),
-        batteryPower: 0,
+        batteryPower: parseFloat(statusData.pdisCharge1),
         gridPower: parseFloat(statusData.pactouser),
-        energy: 0,
-        solarEnergy: 0,
-        batteryEnergy: 0,
-        gridEnergy: 0,
-        monthlySavings: 0,
-        totalSavings: 0,
+        energy: parseFloat(totalData.elocalLoadToday),
+        solarEnergy: parseFloat(totalData.epvToday),
+        batteryEnergy: parseFloat(totalData.edischarge1Today),
+        gridEnergy: parseFloat(totalData.elocalLoadToday),
+        monthlySavings: 0, // doesn't seem to be available
+        totalSavings: 0, // doesn't seem to be available
         batterySOC: parseFloat(statusData.SOC)
       }
     }
