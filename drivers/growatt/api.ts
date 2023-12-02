@@ -62,6 +62,9 @@ export class GrowattAPI {
     return devices;
   }
 
+  /*
+    here we get deviceType = mix... and this is build only for storage...
+  */
   async getDevicesByPlant(plant: GrowattPlant): Promise<GrowattDevice[]> {
     const devices: GrowattDevice[] = [];
     const response = (await this.request.post('panel/getDevicesByPlant', `plantId=${plant.id}`)).data;
@@ -83,6 +86,8 @@ export class GrowattAPI {
       case 'storage':
         return this.fetchStorageData(data.id, data.plantId);
         break;
+      case 'mix':
+        return this.fetchMixData(data.id, data.plantId);
       default:
         throw new Error('Inverter type not supported yet!');
     }
@@ -105,6 +110,30 @@ export class GrowattAPI {
         monthlySavings: parseFloat(plantData.mMonth),
         totalSavings: parseFloat(plantData.mTotal),
         batterySOC: parseFloat(statusData.capacity)
+      }
+    }
+  }
+
+  /*
+    mix type seems to be working for SPH inverters
+  */
+  async fetchMixData(id: string, plantId: string) {
+    const statusData = (await this.request.post(`/panel/mix/getMIXStatusData?plantId=${plantId}`, `mixSn=${id}`)).data.obj;
+    const totalData = (await this.request.post(`/panel/mix/getMIXTotalData?plantId=${plantId}`, `mixSn=${id}`)).data.obj;
+    const plantData = (await this.request.post('/device/getPlantTotalData', `plantId=${plantId}`)).data.obj;
+    if (statusData && totalData && plantData) {
+      return {
+        power: parseFloat(statusData.pLocalLoad),
+        solarPower: parseFloat(statusData.pPv1),
+        batteryPower: parseFloat(statusData.pdisCharge1),
+        gridPower: parseFloat(statusData.pactouser),
+        energy: parseFloat(totalData.elocalLoadToday),
+        solarEnergy: parseFloat(totalData.epvToday),
+        batteryEnergy: parseFloat(totalData.edischarge1Today),
+        gridEnergy: parseFloat(totalData.elocalLoadToday),
+        monthlySavings: 0, // doesn't seem to be available
+        totalSavings: 0, // doesn't seem to be available
+        batterySOC: parseFloat(statusData.SOC)
       }
     }
   }
